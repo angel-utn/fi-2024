@@ -22,6 +22,8 @@ int main(){
     float vecRecaudacion[31] = {}, importe;
     int nroVenta, dia, i;
 
+    int diasSinVentas = 0;
+
     cout << "Nro de venta: ";
     cin >> nroVenta;
 
@@ -41,6 +43,13 @@ int main(){
     for(i=0; i<31; i++){
         cout << "Dia: " << i+1 << " Importe $: " << vecRecaudacion[i] << endl;
     }
+
+    for(i=0; i<31; i++){
+        if (vecRecaudacion[i] == 0){
+            diasSinVentas++;
+        }
+    }
+    cout << "Dias en los que no hubo ventas: " << diasSinVentas << endl;
 
 
     return 0;
